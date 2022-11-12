@@ -5,7 +5,8 @@ import com.example.BondarHW8.model.Goods;
 import java.util.List;
 import java.util.Optional;
 
-public class GoodsService {
+
+public interface GoodsService {
 
     Goods create(Goods goods);
 

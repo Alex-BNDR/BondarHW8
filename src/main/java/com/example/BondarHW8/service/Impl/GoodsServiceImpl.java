@@ -3,6 +3,7 @@ package com.example.BondarHW8.service.Impl;
 import com.example.BondarHW8.model.Goods;
 import com.example.BondarHW8.repository.GoodsRepository;
 import com.example.BondarHW8.service.GoodsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +12,10 @@ import java.util.Optional;
 @Service
 public class GoodsServiceImpl implements GoodsService {
 
+
     private final GoodsRepository goodsRepository;
 
+    @Autowired
     public GoodsServiceImpl(GoodsRepository goodsRepository){
         this.goodsRepository = goodsRepository;
     }
@@ -23,8 +26,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public void delete(Long id){
-        goodsRepository.deleteById(id);
+    public Goods update(Goods goods) {
+        return null;
     }
 
     @Override

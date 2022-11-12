@@ -3,10 +3,12 @@ package com.example.BondarHW8.repository;
 import com.example.BondarHW8.model.Goods;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public class GoodsRepository extends CrudRepository<Goods, Long> {
+@Repository
+public interface GoodsRepository extends CrudRepository<Goods, Long> {
 
     List<Goods> findGoodsByFinalYearOfAppointmentLessThan(int finalYearOfAppointment);
 
@@ -14,4 +16,5 @@ public class GoodsRepository extends CrudRepository<Goods, Long> {
 
     @Query("SELECT y FROM Product y WHERE y.yearOfManufacture =:yearOfManufacture AND y.finalYearOfAppointment =:finalYearOfAppointment")
     List<Goods> findGoodsByYearOfManufactureAndFinalYearOfAppointment(int yearOfManufacture, int finalYearOfAppointment);
+
 }
